@@ -47,3 +47,5 @@ Thumbs.db
 
 # SAM assests
 template-export.yml
+
+.env

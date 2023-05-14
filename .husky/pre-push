@@ -1,11 +1,18 @@
 #!/bin/sh
+
+set -a # automatically export all variables
+source "./.env"
+set +a
+
 . "$(dirname "$0")/_/husky.sh"
 
-if npm run test:ci; then
+if npm run coverage; then
     echo "Test: success!"
 else
     echo "Test: failure!"
 fi
+
+codecov --token=$CODECOV_TOKEN
 
 if npm audit; then
     echo "Audit: success!"

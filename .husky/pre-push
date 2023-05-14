@@ -6,3 +6,9 @@ if npm run test:ci; then
 else
     echo "Test: failure!"
 fi
+
+if npm audit; then
+    echo "Audit: success!"
+else
+    echo "Audit: failure!"
+fi
